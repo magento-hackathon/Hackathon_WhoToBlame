@@ -1,0 +1,87 @@
+<!--
+/**
+ * Hackathon_WhoToBlame extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category	Hackathon
+ * @package		Hackathon_WhoToBlame
+ * @copyright	Copyright © 2013 TRITUM GmbH ( http://www.tritum.de )
+ * @license		http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/**
+ * Module configuration
+ *
+ * @category	Hackathon
+ * @package		Hackathon_WhoToBlame
+ * @subpackage	Config
+ * @author		Sebastian Wagner <sebastian.wagner@tritum.de>
+ * @since		0.1.0
+ */
+-->
+<config>
+	<modules>
+		<Hackathon_WhoToBlame>
+			<version>0.1.0</version>
+		</Hackathon_WhoToBlame>
+	</modules>
+	<adminhtml>
+		<translate>
+			<modules>
+				<Hackathon_WhoToBlame>
+					<files>
+						<default>Hackathon_WhoToBlame.csv</default>
+					</files>
+				</Hackathon_WhoToBlame>
+			</modules>
+		</translate>
+	</adminhtml>
+	<global>
+		<helpers>
+			<hackathon_whotoblame>
+				<class>Hackathon_WhoToBlame_Helper</class>
+			</hackathon_whotoblame>
+		</helpers>
+		<models>
+			<hackathon_whotoblame>
+				<class>Hackathon_WhoToBlame_Model</class>
+			</hackathon_whotoblame>
+		</models>
+        <resources>
+            <hackathon_whotoblame_setup>
+                <setup>
+                    <module>Hackathon_WhoToBlame</module>
+                    <class>Hackathon_WhoToBlame_Model_Resource_Setup</class>
+                </setup>
+            </hackathon_whotoblame_setup>
+        </resources>
+        <blocks>
+            <hackathon_whotoblame>
+                <class>Hackathon_WhoToBlame_Block</class>
+            </hackathon_whotoblame>
+        </blocks>
+        <events>
+            <event_to_listen_to>
+                <observers>
+                    <hackathon_whotoblame_event_to_listen_to>
+                        <class>hackathon_whotoblame/observer</class>
+                        <method>eventToListenTo</method>
+                    </hackathon_whotoblame_event_to_listen_to>
+                </observers>
+            </event_to_listen_to>
+        </events>
+	</global>
+	<default>
+		<hackathon_whotoblame>
+			<trigger>
+				<enable>1</enable>
+			</trigger>
+		</hackathon_whotoblame>
+	</default>
+</config>
